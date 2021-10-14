@@ -10,7 +10,10 @@ export default class GoogleDriveIntegration extends PureComponent {
     }
 
     componentDidMount() {
-        globalObserver.register('googledrive.authorise', data => this.setState(data));
+        globalObserver.register('googledrive.authorise', data => {
+            console.log(data, 'googledrive.authorise');
+            this.setState(data);
+        });
     }
 
     // eslint-disable-next-line class-methods-use-this
